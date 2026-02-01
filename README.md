@@ -1,55 +1,75 @@
-# PersonalPythonBot - BingX Trading Bot
+# 📊 BingX Trading Bot - Monitoring Portefeuille
 
-This is a simple Python trading bot for BingX using Bollinger Bands and RSI indicators. It can run in test mode (no API keys required) or live mode (with your BingX API credentials).
+Bot Python pour surveiller et analyser vos positions de trading sur **BingX** (Perpetual Futures et Standard Futures).
 
-## Features
-- Fetches OHLCV data from BingX (or simulates data in test mode)
-- Calculates Bollinger Bands (20, 2) and RSI (14)
-- Generates BUY/SELL/HOLD signals
-- Places real or simulated orders
+## 🎯 Fonctionnalités
 
-## Requirements
+Le bot récupère et affiche en temps réel :
+
+- ✅ **Perpetual Futures (Swap V2)**
+  - Solde du compte et disponibilité
+  - Positions LONG/SHORT avec P&L
+  
+- ✅ **Standard Futures (Contract V1)**
+  - Solde du compte
+  - Positions LONG/SHORT avec levier et marge
+  - Historique des ordres
+
+- ✅ **Résumé Consolidé**
+  - Solde total
+  - P&L global
+  - Nombre total de positions
+
+## 🚀 Installation
+
+### Prérequis
 - Python 3.8+
-- Install dependencies:
+- Compte BingX avec API activée
 
+### Dépendances
 ```bash
-pip install pandas pandas_ta requests
+pip install requests
 ```
 
-## Configuration
+## ⚙️ Configuration
 
-### 1. API Keys (for live trading)
-- Add your BingX API key and secret to `config.json`:
+### Clés API BingX
 
+**Option 1 : Variables d'environnement**
+```bash
+export BINGX_API_KEY="votre_cle_api"
+export BINGX_API_SECRET="votre_secret_api"
 ```
+
+**Option 2 : Fichier config.json**
+```json
 {
-    "BINGX_API_KEY": "your_api_key_here",
-    "BINGX_API_SECRET": "your_api_secret_here"
+    "BINGX_API_KEY": "votre_cle_api",
+    "BINGX_API_SECRET": "votre_secret_api"
 }
 ```
 
-- Or set them as environment variables:
-
-```bash
-export BINGX_API_KEY="your_api_key"
-export BINGX_API_SECRET="your_api_secret"
-```
-
-### 2. Test Mode
-- If you do not provide API keys, the bot will run in test mode using simulated data and will not place real orders.
-
-## How to Run
+## 🏃 Lancement
 
 ```bash
 python trading_bot.py
 ```
 
-- The bot will print signals and (in live mode) place orders automatically.
-- To stop the bot, press `Ctrl+C`.
+Le bot affichera :
+- 💰 Solde total et disponible
+- 📊 Positions LONG/SHORT
+- 📈 P&L par position
+- ✅ Résumé consolidé
 
-## Notes
-- For live trading, use at your own risk. Test thoroughly before using real funds.
-- You can adjust trading parameters (symbol, interval, order size) in `trading_bot.py`.
+Pour arrêter : `Ctrl+C`
 
-## License
+## ⚠️ Avertissements
+
+- **Trading à risque** : Utilisez ce bot à vos propres risques
+- **Testez d'abord** : Utilisez le mode simulation avant le trading réel
+- **Capital** : N'investissez que ce que vous pouvez vous permettre de perdre
+- **Surveillance** : Surveillez régulièrement les performances du bot
+
+## 📝 License
+
 MIT
