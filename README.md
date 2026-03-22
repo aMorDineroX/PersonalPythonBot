@@ -1,75 +1,32 @@
-# 📊 BingX Trading Bot - Monitoring Portefeuille
+# 🤖 PersonalPythonBot
 
-Bot Python pour surveiller et analyser vos positions de trading sur **BingX** (Perpetual Futures et Standard Futures).
+Automated trading bot written in Python. Connects to crypto exchanges via CCXT library for 24/7 algorithmic trading.
 
-## 🎯 Fonctionnalités
+## Features
 
-Le bot récupère et affiche en temps réel :
+- 📈 Automated buy/sell signals
+- 🔄 Real-time market data via WebSocket
+- ⚙️ Configurable strategies
+- 🛡️ Risk management (stop-loss, take-profit)
 
-- ✅ **Perpetual Futures (Swap V2)**
-  - Solde du compte et disponibilité
-  - Positions LONG/SHORT avec P&L
-  
-- ✅ **Standard Futures (Contract V1)**
-  - Solde du compte
-  - Positions LONG/SHORT avec levier et marge
-  - Historique des ordres
+## Tech Stack
 
-- ✅ **Résumé Consolidé**
-  - Solde total
-  - P&L global
-  - Nombre total de positions
+- **Python 3**
+- **CCXT** - Crypto exchange trading library
+- **Pandas** - Data analysis
+- **NumPy** - Numerical computing
 
-## 🚀 Installation
-
-### Prérequis
-- Python 3.8+
-- Compte BingX avec API activée
-
-### Dépendances
-```bash
-pip install requests
-```
-
-## ⚙️ Configuration
-
-### Clés API BingX
-
-**Option 1 : Variables d'environnement**
-```bash
-export BINGX_API_KEY="votre_cle_api"
-export BINGX_API_SECRET="votre_secret_api"
-```
-
-**Option 2 : Fichier config.json**
-```json
-{
-    "BINGX_API_KEY": "votre_cle_api",
-    "BINGX_API_SECRET": "votre_secret_api"
-}
-```
-
-## 🏃 Lancement
+## Getting Started
 
 ```bash
-python trading_bot.py
+pip install -r requirements.txt
+python bot.py
 ```
 
-Le bot affichera :
-- 💰 Solde total et disponible
-- 📊 Positions LONG/SHORT
-- 📈 P&L par position
-- ✅ Résumé consolidé
+## Configuration
 
-Pour arrêter : `Ctrl+C`
+Edit `config.json` to set your API keys and trading parameters.
 
-## ⚠️ Avertissements
+---
 
-- **Trading à risque** : Utilisez ce bot à vos propres risques
-- **Testez d'abord** : Utilisez le mode simulation avant le trading réel
-- **Capital** : N'investissez que ce que vous pouvez vous permettre de perdre
-- **Surveillance** : Surveillez régulièrement les performances du bot
-
-## 📝 License
-
-MIT
+*Built by Mor Ndiaye Gaye - Algorithmic Quantitative Developer*
